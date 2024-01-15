@@ -9,24 +9,36 @@
 /* Begin PBXBuildFile section */
 		2ACC52952B55B34F0036B97C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52942B55B34F0036B97C /* AppDelegate.swift */; };
 		2ACC52972B55B3500036B97C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52962B55B3500036B97C /* GameScene.sks */; };
-		2ACC52992B55B3500036B97C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52982B55B3500036B97C /* Actions.sks */; };
 		2ACC529B2B55B3500036B97C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC529A2B55B3500036B97C /* GameScene.swift */; };
-		2ACC529D2B55B3500036B97C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC529C2B55B3500036B97C /* GameViewController.swift */; };
-		2ACC52A02B55B3500036B97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC529E2B55B3500036B97C /* Main.storyboard */; };
 		2ACC52A22B55B3520036B97C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52A12B55B3520036B97C /* Assets.xcassets */; };
 		2ACC52A52B55B3520036B97C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52A32B55B3520036B97C /* LaunchScreen.storyboard */; };
+		2ACC52B22B55B64C0036B97C /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52AB2B55B64C0036B97C /* MenuRouter.swift */; };
+		2ACC52B52B55B64C0036B97C /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52AE2B55B64C0036B97C /* MenuPresenter.swift */; };
+		2ACC52B62B55B64C0036B97C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52AF2B55B64C0036B97C /* MenuViewModel.swift */; };
+		2ACC52B72B55B64C0036B97C /* MenuAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52B02B55B64C0036B97C /* MenuAssembly.swift */; };
+		2ACC52B82B55B64C0036B97C /* MenuViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52B12B55B64C0036B97C /* MenuViewModelFactory.swift */; };
+		2ACC52BB2B55B6650036B97C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52B92B55B6650036B97C /* MenuViewController.swift */; };
+		2ACC52BC2B55B6650036B97C /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52BA2B55B6650036B97C /* MenuViewController.xib */; };
+		2ACC52C12B55B73E0036B97C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52BF2B55B73E0036B97C /* GameViewController.swift */; };
+		2ACC52C22B55B73F0036B97C /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52C02B55B73E0036B97C /* GameViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2ACC52912B55B34F0036B97C /* GameProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACC52942B55B34F0036B97C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ACC52962B55B3500036B97C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		2ACC52982B55B3500036B97C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		2ACC529A2B55B3500036B97C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		2ACC529C2B55B3500036B97C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		2ACC529F2B55B3500036B97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2ACC52A12B55B3520036B97C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2ACC52A42B55B3520036B97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2ACC52AB2B55B64C0036B97C /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		2ACC52AE2B55B64C0036B97C /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		2ACC52AF2B55B64C0036B97C /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		2ACC52B02B55B64C0036B97C /* MenuAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAssembly.swift; sourceTree = "<group>"; };
+		2ACC52B12B55B64C0036B97C /* MenuViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModelFactory.swift; sourceTree = "<group>"; };
+		2ACC52B92B55B6650036B97C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		2ACC52BA2B55B6650036B97C /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		2ACC52BF2B55B73E0036B97C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		2ACC52C02B55B73E0036B97C /* GameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,16 +71,38 @@
 		2ACC52932B55B34F0036B97C /* GameProject */ = {
 			isa = PBXGroup;
 			children = (
+				2ACC52BE2B55B6860036B97C /* GameVC */,
+				2ACC52BD2B55B6690036B97C /* Menu */,
 				2ACC52942B55B34F0036B97C /* AppDelegate.swift */,
 				2ACC52962B55B3500036B97C /* GameScene.sks */,
-				2ACC52982B55B3500036B97C /* Actions.sks */,
-				2ACC529A2B55B3500036B97C /* GameScene.swift */,
-				2ACC529C2B55B3500036B97C /* GameViewController.swift */,
-				2ACC529E2B55B3500036B97C /* Main.storyboard */,
 				2ACC52A12B55B3520036B97C /* Assets.xcassets */,
 				2ACC52A32B55B3520036B97C /* LaunchScreen.storyboard */,
 			);
 			path = GameProject;
+			sourceTree = "<group>";
+		};
+		2ACC52BD2B55B6690036B97C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				2ACC52AB2B55B64C0036B97C /* MenuRouter.swift */,
+				2ACC52AE2B55B64C0036B97C /* MenuPresenter.swift */,
+				2ACC52AF2B55B64C0036B97C /* MenuViewModel.swift */,
+				2ACC52B02B55B64C0036B97C /* MenuAssembly.swift */,
+				2ACC52B12B55B64C0036B97C /* MenuViewModelFactory.swift */,
+				2ACC52B92B55B6650036B97C /* MenuViewController.swift */,
+				2ACC52BA2B55B6650036B97C /* MenuViewController.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		2ACC52BE2B55B6860036B97C /* GameVC */ = {
+			isa = PBXGroup;
+			children = (
+				2ACC529A2B55B3500036B97C /* GameScene.swift */,
+				2ACC52BF2B55B73E0036B97C /* GameViewController.swift */,
+				2ACC52C02B55B73E0036B97C /* GameViewController.xib */,
+			);
+			path = GameVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,11 +163,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ACC52A02B55B3500036B97C /* Main.storyboard in Resources */,
 				2ACC52972B55B3500036B97C /* GameScene.sks in Resources */,
+				2ACC52BC2B55B6650036B97C /* MenuViewController.xib in Resources */,
 				2ACC52A22B55B3520036B97C /* Assets.xcassets in Resources */,
 				2ACC52A52B55B3520036B97C /* LaunchScreen.storyboard in Resources */,
-				2ACC52992B55B3500036B97C /* Actions.sks in Resources */,
+				2ACC52C22B55B73F0036B97C /* GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,22 +179,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ACC529B2B55B3500036B97C /* GameScene.swift in Sources */,
-				2ACC529D2B55B3500036B97C /* GameViewController.swift in Sources */,
+				2ACC52B62B55B64C0036B97C /* MenuViewModel.swift in Sources */,
+				2ACC52B72B55B64C0036B97C /* MenuAssembly.swift in Sources */,
+				2ACC52B22B55B64C0036B97C /* MenuRouter.swift in Sources */,
+				2ACC52C12B55B73E0036B97C /* GameViewController.swift in Sources */,
+				2ACC52BB2B55B6650036B97C /* MenuViewController.swift in Sources */,
+				2ACC52B82B55B64C0036B97C /* MenuViewModelFactory.swift in Sources */,
 				2ACC52952B55B34F0036B97C /* AppDelegate.swift in Sources */,
+				2ACC52B52B55B64C0036B97C /* MenuPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2ACC529E2B55B3500036B97C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2ACC529F2B55B3500036B97C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2ACC52A32B55B3520036B97C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,12 +326,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +339,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GameProject.GameProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,12 +356,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,9 +369,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GameProject.GameProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -28,7 +28,7 @@ class GameScene: SKScene {
         
         if let spinnyNode = self.spinnyNode {
             spinnyNode.lineWidth = 2.5
-            
+            spinnyNode.zPosition = 9
             spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
             spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
                                               SKAction.fadeOut(withDuration: 0.5),
@@ -48,7 +48,7 @@ class GameScene: SKScene {
     func touchMoved(toPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
-            n.strokeColor = SKColor.blue
+            n.strokeColor = SKColor.red
             self.addChild(n)
         }
     }
@@ -56,7 +56,7 @@ class GameScene: SKScene {
     func touchUp(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
-            n.strokeColor = SKColor.red
+            n.strokeColor = SKColor.white
             self.addChild(n)
         }
     }
