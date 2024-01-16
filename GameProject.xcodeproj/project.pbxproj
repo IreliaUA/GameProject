@@ -21,6 +21,13 @@
 		2ACC52BC2B55B6650036B97C /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52BA2B55B6650036B97C /* MenuViewController.xib */; };
 		2ACC52C12B55B73E0036B97C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52BF2B55B73E0036B97C /* GameViewController.swift */; };
 		2ACC52C22B55B73F0036B97C /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52C02B55B73E0036B97C /* GameViewController.xib */; };
+		2ACC52CB2B572B8F0036B97C /* ResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52C42B572B8F0036B97C /* ResultRouter.swift */; };
+		2ACC52CE2B572B8F0036B97C /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52C72B572B8F0036B97C /* ResultPresenter.swift */; };
+		2ACC52CF2B572B8F0036B97C /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52C82B572B8F0036B97C /* ResultViewModel.swift */; };
+		2ACC52D02B572B8F0036B97C /* ResultAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52C92B572B8F0036B97C /* ResultAssembly.swift */; };
+		2ACC52D12B572B8F0036B97C /* ResultViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52CA2B572B8F0036B97C /* ResultViewModelFactory.swift */; };
+		2ACC52D42B572BB00036B97C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52D22B572BB00036B97C /* ResultViewController.swift */; };
+		2ACC52D52B572BB00036B97C /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52D32B572BB00036B97C /* ResultViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,13 @@
 		2ACC52BA2B55B6650036B97C /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		2ACC52BF2B55B73E0036B97C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2ACC52C02B55B73E0036B97C /* GameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		2ACC52C42B572B8F0036B97C /* ResultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRouter.swift; sourceTree = "<group>"; };
+		2ACC52C72B572B8F0036B97C /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
+		2ACC52C82B572B8F0036B97C /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		2ACC52C92B572B8F0036B97C /* ResultAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAssembly.swift; sourceTree = "<group>"; };
+		2ACC52CA2B572B8F0036B97C /* ResultViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModelFactory.swift; sourceTree = "<group>"; };
+		2ACC52D22B572BB00036B97C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		2ACC52D32B572BB00036B97C /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +85,7 @@
 		2ACC52932B55B34F0036B97C /* GameProject */ = {
 			isa = PBXGroup;
 			children = (
+				2ACC52C32B572B720036B97C /* ResultVC */,
 				2ACC52BE2B55B6860036B97C /* GameVC */,
 				2ACC52BD2B55B6690036B97C /* Menu */,
 				2ACC52942B55B34F0036B97C /* AppDelegate.swift */,
@@ -103,6 +118,20 @@
 				2ACC52C02B55B73E0036B97C /* GameViewController.xib */,
 			);
 			path = GameVC;
+			sourceTree = "<group>";
+		};
+		2ACC52C32B572B720036B97C /* ResultVC */ = {
+			isa = PBXGroup;
+			children = (
+				2ACC52C42B572B8F0036B97C /* ResultRouter.swift */,
+				2ACC52C72B572B8F0036B97C /* ResultPresenter.swift */,
+				2ACC52C82B572B8F0036B97C /* ResultViewModel.swift */,
+				2ACC52C92B572B8F0036B97C /* ResultAssembly.swift */,
+				2ACC52CA2B572B8F0036B97C /* ResultViewModelFactory.swift */,
+				2ACC52D22B572BB00036B97C /* ResultViewController.swift */,
+				2ACC52D32B572BB00036B97C /* ResultViewController.xib */,
+			);
+			path = ResultVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ACC52972B55B3500036B97C /* GameScene.sks in Resources */,
+				2ACC52D52B572BB00036B97C /* ResultViewController.xib in Resources */,
 				2ACC52BC2B55B6650036B97C /* MenuViewController.xib in Resources */,
 				2ACC52A22B55B3520036B97C /* Assets.xcassets in Resources */,
 				2ACC52A52B55B3520036B97C /* LaunchScreen.storyboard in Resources */,
@@ -179,14 +209,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ACC529B2B55B3500036B97C /* GameScene.swift in Sources */,
+				2ACC52CB2B572B8F0036B97C /* ResultRouter.swift in Sources */,
 				2ACC52B62B55B64C0036B97C /* MenuViewModel.swift in Sources */,
 				2ACC52B72B55B64C0036B97C /* MenuAssembly.swift in Sources */,
 				2ACC52B22B55B64C0036B97C /* MenuRouter.swift in Sources */,
+				2ACC52D42B572BB00036B97C /* ResultViewController.swift in Sources */,
+				2ACC52D12B572B8F0036B97C /* ResultViewModelFactory.swift in Sources */,
 				2ACC52C12B55B73E0036B97C /* GameViewController.swift in Sources */,
+				2ACC52D02B572B8F0036B97C /* ResultAssembly.swift in Sources */,
 				2ACC52BB2B55B6650036B97C /* MenuViewController.swift in Sources */,
 				2ACC52B82B55B64C0036B97C /* MenuViewModelFactory.swift in Sources */,
 				2ACC52952B55B34F0036B97C /* AppDelegate.swift in Sources */,
 				2ACC52B52B55B64C0036B97C /* MenuPresenter.swift in Sources */,
+				2ACC52CE2B572B8F0036B97C /* ResultPresenter.swift in Sources */,
+				2ACC52CF2B572B8F0036B97C /* ResultViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

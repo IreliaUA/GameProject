@@ -18,10 +18,18 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myP-DY-vgg">
-                    <rect key="frame" x="168.66666666666666" y="408.66666666666669" width="56" height="35"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Play"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBG" translatesAutoresizingMaskIntoConstraints="NO" id="ZKQ-a8-ObY">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myP-DY-vgg">
+                    <rect key="frame" x="107.66666666666669" y="395.66666666666669" width="178" height="61"/>
+                    <color key="backgroundColor" red="0.91764705882352937" green="0.48452246189999998" blue="0.4152330756" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="61" id="CJM-ZC-kad"/>
+                        <constraint firstAttribute="width" constant="178" id="FWf-G8-2E8"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="PLAY"/>
                     <connections>
                         <action selector="playButtonAction:" destination="-1" eventType="touchUpInside" id="w3x-JY-thP"/>
                     </connections>
@@ -30,13 +38,18 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="myP-DY-vgg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C92-Oo-IPg"/>
-                <constraint firstItem="myP-DY-vgg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vko-Wf-56b"/>
+                <constraint firstItem="ZKQ-a8-ObY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Cjk-Ta-uEK"/>
+                <constraint firstItem="myP-DY-vgg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KxA-5W-Oxf"/>
+                <constraint firstAttribute="bottom" secondItem="ZKQ-a8-ObY" secondAttribute="bottom" id="YVu-rb-Apf"/>
+                <constraint firstItem="ZKQ-a8-ObY" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bXA-NC-MPH"/>
+                <constraint firstItem="ZKQ-a8-ObY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="efS-aa-myg"/>
+                <constraint firstItem="myP-DY-vgg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fLy-Rl-ALk"/>
             </constraints>
-            <point key="canvasLocation" x="117" y="20"/>
+            <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <image name="menuBG" width="750" height="1624"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
