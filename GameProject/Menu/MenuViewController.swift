@@ -14,8 +14,11 @@ protocol IMenuViewController: AnyObject {
 final class MenuViewController: UIViewController {
   
   // MARK: - IBOutlet
-  
-  // MARK: - Properties
+    
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var testButton: UIButton!
+    
+    // MARK: - Properties
   
   private let presenter: IMenuPresenter
   
@@ -41,15 +44,23 @@ final class MenuViewController: UIViewController {
   // MARK: - Private Methods
   
   private func setupUI() {
+      playButton.layer.cornerRadius = 14
+      playButton.layer.shadowColor = UIColor.black.cgColor
+      playButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+      playButton.layer.shadowOpacity = 0.3
+      playButton.layer.shadowRadius = 4
   }
   
   // MARK: - IBActions
     
     @IBAction func playButtonAction(_ sender: UIButton) {
-        presenter.showGame()
+      presenter.showGame()
     }
     
-  
+    @IBAction func testButtonAction(_ sender: UIButton) {
+        presenter.showResult()
+    }
+    
 }
 
 // MARK: - Extensions

@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="GameProject" customModuleProvider="target">
             <connections>
+                <outlet property="playButton" destination="myP-DY-vgg" id="Xpb-aF-xmw"/>
+                <outlet property="testButton" destination="FUq-b9-h2o" id="Qta-bm-tyH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,16 +36,27 @@
                         <action selector="playButtonAction:" destination="-1" eventType="touchUpInside" id="w3x-JY-thP"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUq-b9-h2o">
+                    <rect key="frame" x="159" y="706.66666666666663" width="75" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="testButtonAction:" destination="-1" eventType="touchUpInside" id="KpF-b6-StJ"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ZKQ-a8-ObY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Cjk-Ta-uEK"/>
                 <constraint firstItem="myP-DY-vgg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KxA-5W-Oxf"/>
+                <constraint firstItem="FUq-b9-h2o" firstAttribute="top" secondItem="myP-DY-vgg" secondAttribute="bottom" constant="250" id="Sje-es-Uyk"/>
+                <constraint firstItem="FUq-b9-h2o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="159" id="TUn-Ps-IPM"/>
                 <constraint firstAttribute="bottom" secondItem="ZKQ-a8-ObY" secondAttribute="bottom" id="YVu-rb-Apf"/>
                 <constraint firstItem="ZKQ-a8-ObY" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bXA-NC-MPH"/>
                 <constraint firstItem="ZKQ-a8-ObY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="efS-aa-myg"/>
                 <constraint firstItem="myP-DY-vgg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fLy-Rl-ALk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FUq-b9-h2o" secondAttribute="trailing" constant="159" id="go6-rK-U1O"/>
             </constraints>
             <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>
         </view>

@@ -11,16 +11,11 @@ import UIKit
 protocol IMenuPresenter {
   func viewDidLoad()
     func showGame()
+    func showResult()
   var viewModel: MenuViewModel? { get }
 }
 
 final class MenuPresenter: IMenuPresenter {
-  
-  /*
-   // MARK: - Presenter
-   Presenter - this class implements the interaction between the Model and the View and contains all the logic.
-   Presenter can implement actions, class or service methods.
-  */
   
   // Dependencies
   weak var view: IMenuViewController?
@@ -50,4 +45,8 @@ final class MenuPresenter: IMenuPresenter {
     func showGame() {
         router.showGame()
     }
+    func showResult(){
+        router.showResult()
+    }
 }
+

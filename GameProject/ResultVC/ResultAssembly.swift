@@ -16,18 +16,17 @@ final class ResultAssembly: IResultAssembly {
   
   // Dependencies
   private let viewModelFactory: IResultViewModelFactory
-  // other services...
-  
   // MARK: - Initialization
   
-  init(viewModelFactory: IResultViewModelFactory = ResultViewModelFactory()) {
+  init(viewModelFactory: IResultViewModelFactory = ResultViewModelFactory()
+  ) {
     self.viewModelFactory = viewModelFactory
   }
   
   // MARK: - IResultAssembly
   
   func assemble() -> UIViewController {
-    let router: ResultRouter = ResultRouter()
+      let router: ResultRouter = ResultRouter()
     let presenter: ResultPresenter = ResultPresenter(
       viewModelFactory: viewModelFactory,
       router: router

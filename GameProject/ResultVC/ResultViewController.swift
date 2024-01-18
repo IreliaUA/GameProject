@@ -15,7 +15,13 @@ final class ResultViewController: UIViewController {
   
   // MARK: - IBOutlet
   
-  // MARK: - Properties
+    @IBOutlet weak var loseLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var restartButton: UIButton!
+    @IBOutlet weak var loseView: UIView!
+    
+    // MARK: - Properties
   
   private let presenter: IResultPresenter
   
@@ -41,12 +47,30 @@ final class ResultViewController: UIViewController {
   // MARK: - Private Methods
   
   private func setupUI() {
+      loseView.layer.cornerRadius = 60
+      
+      menuButton.layer.cornerRadius = 14
+      menuButton.layer.shadowColor = UIColor.black.cgColor
+      menuButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+      menuButton.layer.shadowOpacity = 0.3
+      menuButton.layer.shadowRadius = 4
+      
+      restartButton.layer.cornerRadius = 14
+      restartButton.layer.shadowColor = UIColor.black.cgColor
+      restartButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+      restartButton.layer.shadowOpacity = 0.3
+      restartButton.layer.shadowRadius = 4
   }
   
   // MARK: - IBActions
   
+    @IBAction func restartButtonAction(_ sender: UIButton) {
+    }
+    @IBAction func menuButtonAction(_ sender: UIButton) {
+        presenter.showMenu()
+//        self.navigationController?.popToRootViewController(animated: true)
+    }
 }
-
 // MARK: - Extensions
 
 extension ResultViewController: IResultViewController {

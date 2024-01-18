@@ -10,16 +10,11 @@ import UIKit
 
 protocol IResultPresenter {
   func viewDidLoad()
+    func showMenu()
   var viewModel: ResultViewModel? { get }
 }
 
 final class ResultPresenter: IResultPresenter {
-  
-  /*
-   // MARK: - Presenter
-   Presenter - this class implements the interaction between the Model and the View and contains all the logic.
-   Presenter can implement actions, class or service methods.
-  */
   
   // Dependencies
   weak var view: IResultViewController?
@@ -45,4 +40,7 @@ final class ResultPresenter: IResultPresenter {
     viewModel = createdViewModel
     view?.setup(with: createdViewModel)
   }
+    func showMenu(){
+        router.showMenu()
+    }
 }

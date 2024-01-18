@@ -9,23 +9,26 @@
 import UIKit
 
 protocol IResultRouter {
-  func showNextScreen()
+    func showNextScreen()
+    func showMenu()
 }
 
 final class ResultRouter: IResultRouter {
-  
-  weak var transitionHandler: UIViewController?
-  
-  /*
-   // MARK: - Router
-   Router - this class is used to implement the transition functionality and show other screens.
-   Use an initializer for injection assembly other screens, and transitionHandler as the screen from which the next screen will be shown
-   
-   init(nextScreenAssembly: InextScreenAssembly) {
-      self.nextScreenAssembly = nextScreenAssembly
-   }
-   */
-  
-  func showNextScreen() {
-  }
+    
+    weak var transitionHandler: UIViewController?
+    
+    
+    init() {
+        
+    }
+    
+    func showNextScreen() {
+    }
+    
+    func showMenu() {
+        transitionHandler?.navigationController?.popToRootViewController(animated: true)
+//        let menuVC = menuVCAssembly.assemble()
+//        menuVC.navigationItem.hidesBackButton = true
+//        transitionHandler?.navigationController?.pushViewController(menuVC, animated: true)
+    }
 }
