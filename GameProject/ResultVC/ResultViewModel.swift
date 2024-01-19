@@ -7,6 +7,10 @@
 //
 
 struct ResultViewModel {
+    var loseLabel: String
+    var scoreLabel: String
+    var menuButton: String
+    var restartButton: String
 }
 
 

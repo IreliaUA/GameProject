@@ -12,30 +12,49 @@ class GameScene: SKScene {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
+    var player = Player()
+//    var fallingcactus = Cactus()
+    
     
     override func didMove(to view: SKView) {
-        
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
-        
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
-        
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            spinnyNode.zPosition = 9
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -2.0)
+        //player.size = CGSize(width: 50, height: 50)
+        addChild(player)
+        //addChild(fallingcactus)
+        self.run(.sequence([
+            .wait(forDuration: 3),
+            .run {
+                self.startGame()
+            }
+        ]))
+        player.position = CGPoint(x: 0, y: -400)
     }
     
+    func startGame() {
+        let sequenceAction = SKAction.sequence([.wait(forDuration: 1),.run {
+            self.spawnCactus()
+        }])
+        let repeatAction = SKAction.repeatForever(sequenceAction)
+        
+        run(repeatAction)
+        
+//        self.run(.repeatForever(.sequence([
+//            .wait(forDuration: 2),
+//            .run {
+//                self.spawnCactus()
+//            }
+//        ])))
+    }
+    
+    func spawnCactus() {
+        var cac = Cactus()
+        cac.position = CGPoint(x: CGFloat.random(in: frame.minX + 100...frame.maxX - 100), y: frame.maxY)
+        var ransize: [(Double, Double)] = [(72, 80),(96,120)]
+        if let randSize = ransize.randomElement() {
+            cac.size = CGSize(width: randSize.0, height: randSize.1)
+            addChild(cac)
+        }
+    }
     
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -44,6 +63,8 @@ class GameScene: SKScene {
             self.addChild(n)
         }
     }
+    
+   // func
     
     func touchMoved(toPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {

@@ -28,6 +28,9 @@
 		2ACC52D12B572B8F0036B97C /* ResultViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52CA2B572B8F0036B97C /* ResultViewModelFactory.swift */; };
 		2ACC52D42B572BB00036B97C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52D22B572BB00036B97C /* ResultViewController.swift */; };
 		2ACC52D52B572BB00036B97C /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC52D32B572BB00036B97C /* ResultViewController.xib */; };
+		2ACC52D72B5AB1790036B97C /* PhysicsBodiesAndZPositionsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52D62B5AB1790036B97C /* PhysicsBodiesAndZPositionsFile.swift */; };
+		2ACC52DA2B5AB5950036B97C /* CactusNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52D92B5AB5950036B97C /* CactusNode.swift */; };
+		2ACC52DC2B5ABB950036B97C /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC52DB2B5ABB950036B97C /* PlayerNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		2ACC52CA2B572B8F0036B97C /* ResultViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModelFactory.swift; sourceTree = "<group>"; };
 		2ACC52D22B572BB00036B97C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		2ACC52D32B572BB00036B97C /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		2ACC52D62B5AB1790036B97C /* PhysicsBodiesAndZPositionsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodiesAndZPositionsFile.swift; sourceTree = "<group>"; };
+		2ACC52D92B5AB5950036B97C /* CactusNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CactusNode.swift; sourceTree = "<group>"; };
+		2ACC52DB2B5ABB950036B97C /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		2ACC52932B55B34F0036B97C /* GameProject */ = {
 			isa = PBXGroup;
 			children = (
+				2ACC52D82B5AB18C0036B97C /* SomeFiles */,
 				2ACC52C32B572B720036B97C /* ResultVC */,
 				2ACC52BE2B55B6860036B97C /* GameVC */,
 				2ACC52BD2B55B6690036B97C /* Menu */,
@@ -132,6 +139,16 @@
 				2ACC52D32B572BB00036B97C /* ResultViewController.xib */,
 			);
 			path = ResultVC;
+			sourceTree = "<group>";
+		};
+		2ACC52D82B5AB18C0036B97C /* SomeFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2ACC52D62B5AB1790036B97C /* PhysicsBodiesAndZPositionsFile.swift */,
+				2ACC52D92B5AB5950036B97C /* CactusNode.swift */,
+				2ACC52DB2B5ABB950036B97C /* PlayerNode.swift */,
+			);
+			path = SomeFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +227,7 @@
 			files = (
 				2ACC529B2B55B3500036B97C /* GameScene.swift in Sources */,
 				2ACC52CB2B572B8F0036B97C /* ResultRouter.swift in Sources */,
+				2ACC52DC2B5ABB950036B97C /* PlayerNode.swift in Sources */,
 				2ACC52B62B55B64C0036B97C /* MenuViewModel.swift in Sources */,
 				2ACC52B72B55B64C0036B97C /* MenuAssembly.swift in Sources */,
 				2ACC52B22B55B64C0036B97C /* MenuRouter.swift in Sources */,
@@ -217,10 +235,12 @@
 				2ACC52D12B572B8F0036B97C /* ResultViewModelFactory.swift in Sources */,
 				2ACC52C12B55B73E0036B97C /* GameViewController.swift in Sources */,
 				2ACC52D02B572B8F0036B97C /* ResultAssembly.swift in Sources */,
+				2ACC52DA2B5AB5950036B97C /* CactusNode.swift in Sources */,
 				2ACC52BB2B55B6650036B97C /* MenuViewController.swift in Sources */,
 				2ACC52B82B55B64C0036B97C /* MenuViewModelFactory.swift in Sources */,
 				2ACC52952B55B34F0036B97C /* AppDelegate.swift in Sources */,
 				2ACC52B52B55B64C0036B97C /* MenuPresenter.swift in Sources */,
+				2ACC52D72B5AB1790036B97C /* PhysicsBodiesAndZPositionsFile.swift in Sources */,
 				2ACC52CE2B572B8F0036B97C /* ResultPresenter.swift in Sources */,
 				2ACC52CF2B572B8F0036B97C /* ResultViewModel.swift in Sources */,
 			);

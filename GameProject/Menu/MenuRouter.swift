@@ -23,7 +23,10 @@ final class MenuRouter: IMenuRouter {
     }
     
     func showGame() {
-        transitionHandler?.navigationController?.pushViewController(GameViewController(), animated: true)
+        let gameViewController = GameViewController()
+//            gameViewController.navigationItem.hidesBackButton = true
+            transitionHandler?.navigationController?.pushViewController(gameViewController, animated: true)
+//        transitionHandler?.navigationController?.pushViewController(GameViewController(), animated: true)
     }
     func showResult() {
         let resutVC = resultVCAssembly.assemble()

@@ -75,5 +75,9 @@ final class ResultViewController: UIViewController {
 
 extension ResultViewController: IResultViewController {
   func setup(with viewModel: ResultViewModel) {
+      loseLabel.text = viewModel.loseLabel
+      scoreLabel.text = viewModel.scoreLabel
+      menuButton.setTitle(viewModel.menuButton, for: .normal)
+      restartButton.setTitle(viewModel.restartButton, for: .normal)
   }
 }

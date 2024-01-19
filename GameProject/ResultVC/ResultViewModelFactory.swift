@@ -15,7 +15,12 @@ protocol IResultViewModelFactory {
 final class ResultViewModelFactory: IResultViewModelFactory {
   
   func makeViewModel() -> ResultViewModel {
-    let viewModel: ResultViewModel = ResultViewModel()
+      let viewModel: ResultViewModel = ResultViewModel(
+        loseLabel: "YOU LOSE",
+        scoreLabel: "Score:",
+        menuButton: "MENU",
+        restartButton: "RESTART"
+      )
     return viewModel
   }
 }
