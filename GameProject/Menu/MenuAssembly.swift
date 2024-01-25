@@ -14,8 +14,10 @@ protocol IMenuAssembly {
 
 final class MenuAssembly: IMenuAssembly {
     
+    // Dependencies
     private let viewModelFactory: IMenuViewModelFactory
     private let resultVCAssembly: IResultAssembly
+    // other services...
     
     // MARK: - Initialization
     

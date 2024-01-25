@@ -20,11 +20,10 @@ class Cactus: SKSpriteNode {
         self.physicsBody?.allowsRotation = true
         self.physicsBody?.isDynamic = true
         self.physicsBody?.categoryBitMask = PhysicsBodies.fallingCactus
-        self.physicsBody?.collisionBitMask = PhysicsBodies.player
+        self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = PhysicsBodies.player
         self.physicsBody?.mass = 10
         self.run(.repeatForever(SKAction.rotate(byAngle: .pi * 2, duration: 1)))
-        self.name = "cactus"
     }
     
     required init?(coder aDecoder: NSCoder) {
