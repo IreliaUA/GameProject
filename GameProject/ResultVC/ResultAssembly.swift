@@ -9,33 +9,35 @@
 import UIKit
 
 protocol IResultAssembly {
-  func assemble() -> UIViewController
+    func assemble(score: Int, closure: (() -> Void)?) -> UIViewController
 }
 
 final class ResultAssembly: IResultAssembly {
-  
-  // Dependencies
-  private let viewModelFactory: IResultViewModelFactory
-  // MARK: - Initialization
-  
-  init(viewModelFactory: IResultViewModelFactory = ResultViewModelFactory()
-  ) {
-    self.viewModelFactory = viewModelFactory
-  }
-  
-  // MARK: - IResultAssembly
-  
-  func assemble() -> UIViewController {
-      let router: ResultRouter = ResultRouter()
-    let presenter: ResultPresenter = ResultPresenter(
-      viewModelFactory: viewModelFactory,
-      router: router
-    )
     
-    let viewController: ResultViewController = ResultViewController(presenter: presenter)
-    presenter.view = viewController
-    router.transitionHandler = viewController
+    private let viewModelFactory: IResultViewModelFactory
     
-    return viewController
-  }
+    // MARK: - Initialization
+    
+    init(viewModelFactory: IResultViewModelFactory = ResultViewModelFactory()
+    ) {
+        self.viewModelFactory = viewModelFactory
+    }
+    
+    // MARK: - IResultAssembly
+    
+    func assemble(score: Int, closure: (() -> Void)?) -> UIViewController {
+        let router: ResultRouter = ResultRouter()
+        let presenter: ResultPresenter = ResultPresenter(
+            viewModelFactory: viewModelFactory,
+            router: router,
+            score: score,
+            closure: closure
+        )
+        
+        let viewController: ResultViewController = ResultViewController(presenter: presenter)
+        presenter.view = viewController
+        router.transitionHandler = viewController
+        
+        return viewController
+    }
 }

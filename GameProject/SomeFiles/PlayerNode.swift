@@ -22,7 +22,7 @@ class Player: SKSpriteNode {
         self.physicsBody?.categoryBitMask = PhysicsBodies.player
         self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = PhysicsBodies.fallingCactus
-        self.physicsBody?.mass = 10
+       
     }
     
     required init?(coder aDecoder: NSCoder) {

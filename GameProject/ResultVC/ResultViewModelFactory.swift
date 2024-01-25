@@ -9,18 +9,18 @@
 import UIKit
 
 protocol IResultViewModelFactory {
-  func makeViewModel() -> ResultViewModel
+    func makeViewModel(score: Int) -> ResultViewModel
 }
 
 final class ResultViewModelFactory: IResultViewModelFactory {
-  
-  func makeViewModel() -> ResultViewModel {
-      let viewModel: ResultViewModel = ResultViewModel(
-        loseLabel: "YOU LOSE",
-        scoreLabel: "Score:",
-        menuButton: "MENU",
-        restartButton: "RESTART"
-      )
-    return viewModel
-  }
+    
+    func makeViewModel(score: Int) -> ResultViewModel {
+        let viewModel: ResultViewModel = ResultViewModel(
+            loseLabel: "YOU LOSE",
+            scoreLabel: "Score: \(score)",
+            menuButton: "MENU",
+            restartButton: "RESTART"
+        )
+        return viewModel
+    }
 }

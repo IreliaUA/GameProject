@@ -9,29 +9,37 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
+protocol IGameViewController: AnyObject {
+    func showres(score: Int, closure: (() -> Void)?)
+}
 
+class GameViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
+            if let scene = SKScene(fileNamed: "GameScene") as? GameScene {
                 
-                // Present the scene
+                scene.scaleMode = .aspectFill
+                scene.gameVC = self
                 view.presentScene(scene)
             }
             
             view.ignoresSiblingOrder = true
-            
             view.showsFPS = false
             view.showsNodeCount = false
         }
     }
-
+    
+    
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+}
+
+extension GameViewController: IGameViewController {
+    func showres(score: Int, closure: (() -> Void)?) {
+        self.navigationController?.pushViewController(ResultAssembly().assemble(score: score, closure: closure), animated: true)
     }
 }

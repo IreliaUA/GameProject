@@ -9,27 +9,26 @@
 import UIKit
 
 protocol IMenuRouter {
-  func showGame()
-    func showResult()
+    func showGame()
+    func showResult(closure: (() -> Void)?)
 }
 
 final class MenuRouter: IMenuRouter {
     
     weak var transitionHandler: UIViewController?
     private let resultVCAssembly: IResultAssembly
-
+    
     init(resultVCAssembly: IResultAssembly) {
         self.resultVCAssembly = resultVCAssembly
     }
     
     func showGame() {
         let gameViewController = GameViewController()
-//            gameViewController.navigationItem.hidesBackButton = true
-            transitionHandler?.navigationController?.pushViewController(gameViewController, animated: true)
-//        transitionHandler?.navigationController?.pushViewController(GameViewController(), animated: true)
+        //            gameViewController.navigationItem.hidesBackButton = true
+        transitionHandler?.navigationController?.pushViewController(gameViewController, animated: true)
     }
-    func showResult() {
-        let resutVC = resultVCAssembly.assemble()
+    func showResult(closure: (() -> Void)?) {
+        let resutVC = resultVCAssembly.assemble(score: 0, closure: closure)
         resutVC.navigationItem.hidesBackButton = true
         transitionHandler?.navigationController?.pushViewController(resutVC, animated: true)
     }

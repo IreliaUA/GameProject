@@ -8,102 +8,130 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
+    weak var gameVC: IGameViewController?
+    
     var player = Player()
-//    var fallingcactus = Cactus()
-    
+    var scoreLabel: SKLabelNode!
+    var score: Int = 0 {
+        didSet{
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     
     override func didMove(to view: SKView) {
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -2.0)
+        self.physicsWorld.contactDelegate = self
         //player.size = CGSize(width: 50, height: 50)
-        addChild(player)
-        //addChild(fallingcactus)
-        self.run(.sequence([
-            .wait(forDuration: 3),
-            .run {
-                self.startGame()
-            }
-        ]))
-        player.position = CGPoint(x: 0, y: -400)
+        
+        startGame()
+    }
+    
+    func setupScoreLabel() {
+        scoreLabel = SKLabelNode(fontNamed: "Marker Felt")
+        scoreLabel.text = "Score: 0"
+        scoreLabel.fontSize = 24
+        let color = SKColor(red: 131/255.0, green: 78/255.0, blue: 0, alpha: 1.0)
+        scoreLabel.fontColor = color
+        scoreLabel.position = CGPoint(x: frame.maxX - 150, y: frame.maxY - 150)
+        scoreLabel.zPosition = 20
+        addChild(scoreLabel)
     }
     
     func startGame() {
+        
+        addChild(player)
+        setupScoreLabel()
+        
+        player.position = CGPoint(x: frame.midX, y: -400)
+        
         let sequenceAction = SKAction.sequence([.wait(forDuration: 1),.run {
             self.spawnCactus()
+            self.score += 1
         }])
         let repeatAction = SKAction.repeatForever(sequenceAction)
         
-        run(repeatAction)
+        run(repeatAction, withKey: "spawnActions")
         
-//        self.run(.repeatForever(.sequence([
-//            .wait(forDuration: 2),
-//            .run {
-//                self.spawnCactus()
-//            }
-//        ])))
+        //        self.run(.repeatForever(.sequence([
+        //            .wait(forDuration: 2),
+        //            .run {
+        //                self.spawnCactus()
+        //            }
+        //        ])))
     }
     
     func spawnCactus() {
-        var cac = Cactus()
+        let cac = Cactus()
         cac.position = CGPoint(x: CGFloat.random(in: frame.minX + 100...frame.maxX - 100), y: frame.maxY)
-        var ransize: [(Double, Double)] = [(72, 80),(96,120)]
+        let ransize: [(Double, Double)] = [(72, 80),(96,120)]
         if let randSize = ransize.randomElement() {
             cac.size = CGSize(width: randSize.0, height: randSize.1)
             addChild(cac)
         }
     }
     
-    func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
+    func didBegin(_ contact: SKPhysicsContact) {
+        let bodyA = contact.bodyA
+        let bodyB = contact.bodyB
+        
+        
+        if (bodyA.categoryBitMask == PhysicsBodies.player && bodyB.categoryBitMask == PhysicsBodies.fallingCactus) ||
+            (bodyA.categoryBitMask == PhysicsBodies.fallingCactus && bodyB.categoryBitMask == PhysicsBodies.player) {
+    
+            showResultVC(score: score)
         }
     }
     
-   // func
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.white
-            self.addChild(n)
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+    func showResultVC(score: Int) {
+        children.forEach { child in
+            if child.name == "cactus" {
+                child.removeFromParent()
+            }
         }
         
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        player.removeFromParent()
+        scoreLabel.removeFromParent()
+        self.removeAction(forKey: "spawnActions")
+        gameVC?.showres(score: score, closure: {
+            self.score = 0
+            self.startGame()
+            self.player.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 400)
+        })
+        //(() -> Void)?
+        //        {
+        //            startGame()
+        //        }
     }
-    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+        guard let touch = touches.first else { return }
+        
+        let currentTouchLocation = touch.location(in: self)
+        let previousTouchLocation = touch.previousLocation(in: self)
+        
+        let swipeThreshold: CGFloat = 50
+        
+        let swipeDistance = currentTouchLocation.x - previousTouchLocation.x
+        
+        if swipeDistance < -swipeThreshold {
+            swipeLeft()
+        } else if swipeDistance > swipeThreshold {
+            swipeRight()
+        }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+    func swipeLeft(){
+        let moveLeft = SKAction.moveTo(x: frame.minX + player.size.width + 50, duration: 0.7)
+        player.run(moveLeft)
+        // player.run(.moveTo(x: frame.minX, duration: 1))
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+    func  swipeRight(){
+        let moveLeft = SKAction.moveTo(x: frame.maxX - player.size.width - 50, duration: 0.7)
+        player.run(moveLeft)
     }
-    
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
     }
 }
