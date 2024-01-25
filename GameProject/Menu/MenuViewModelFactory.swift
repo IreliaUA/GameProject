@@ -9,13 +9,13 @@
 import UIKit
 
 protocol IMenuViewModelFactory {
-  func makeViewModel() -> MenuViewModel
+    func makeViewModel() -> MenuViewModel
 }
 
 final class MenuViewModelFactory: IMenuViewModelFactory {
-  
-  func makeViewModel() -> MenuViewModel {
-    let viewModel: MenuViewModel = MenuViewModel()
-    return viewModel
-  }
+    
+    func makeViewModel() -> MenuViewModel {
+        let viewModel: MenuViewModel = MenuViewModel()
+        return viewModel
+    }
 }
