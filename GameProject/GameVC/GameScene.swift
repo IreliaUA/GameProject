@@ -42,6 +42,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func startGame() {
         
         addChild(player)
+        player.removeAllChildren()
+       
+        var trail = getParticle(name: "playerTrail", targetNode: self, pos: CGPoint(x: 0, y: -60))
+        trail.zPosition = self.zPosition + 100
+        player.addChild(trail)
+            
         setupScoreLabel()
         
         player.position = CGPoint(x: frame.midX, y: -400)
@@ -60,6 +66,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //                self.spawnCactus()
         //            }
         //        ])))
+    }
+    
+    func getParticle(name: String, targetNode: SKNode, pos: CGPoint)-> SKEmitterNode {
+        let emitter = SKEmitterNode(fileNamed: name)!
+        emitter.position = pos
+        emitter.targetNode = targetNode
+        return emitter
     }
     
     func spawnCactus() {
