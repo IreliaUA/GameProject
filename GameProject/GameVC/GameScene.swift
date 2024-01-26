@@ -43,11 +43,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(player)
         player.removeAllChildren()
-       
-        var trail = getParticle(name: "playerTrail", targetNode: self, pos: CGPoint(x: 0, y: -60))
+        
+        let trail = getParticle(name: "playerTrail", targetNode: self, pos: CGPoint(x: 0, y: -60))
         trail.zPosition = self.zPosition + 100
         player.addChild(trail)
-            
+        
         setupScoreLabel()
         
         player.position = CGPoint(x: frame.midX, y: -400)
@@ -92,7 +92,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if (bodyA.categoryBitMask == PhysicsBodies.player && bodyB.categoryBitMask == PhysicsBodies.fallingCactus) ||
             (bodyA.categoryBitMask == PhysicsBodies.fallingCactus && bodyB.categoryBitMask == PhysicsBodies.player) {
-    
+            
             showResultVC(score: score)
         }
     }
@@ -112,11 +112,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.startGame()
             self.player.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 400)
         })
-        //(() -> Void)?
-        //        {
-        //            startGame()
-        //        }
     }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         
